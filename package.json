@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

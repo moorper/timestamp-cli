@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import commander from 'commander'
+import moment from 'moment'
 import chalk from 'chalk'
 
 commander
@@ -8,11 +9,12 @@ commander
   .description('Print current unix timestamp.')
 
 commander.action(function (env, options) {
-  const date = new Date()
-  const millisecond = date.getTime()
-  const second = Math.round(millisecond / 1000)
+  const current = moment()
 
-  console.log(chalk.blue('Millisecond Unix Timestamp: '), millisecond)
-  console.log(chalk.green('Second Unix Timestamp: '), second)
+  const date = current.format('YYYY-MM-DD HH:mm:ss')
+  const second = current.unix()
+
+  console.log(chalk.red('Date: '), date)
+  console.log(chalk.green('Timestamp: '), second)
 })
 commander.parse(process.argv)
